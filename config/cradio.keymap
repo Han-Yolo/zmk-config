@@ -61,6 +61,8 @@
         enyay_lower: enyay_lower_macro {
             label = "enyay_lower_macro";
             compatible = "zmk,behavior-macro";
+            wait-ms = <10>;
+            tap-ms = <10>;
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp DE_TILDE &kp DE_N>;
@@ -68,6 +70,8 @@
         enyay_upper: enyay_upper_macro {
             label = "enyay_upper_macro";
             compatible = "zmk,behavior-macro";
+            wait-ms = <10>;
+            tap-ms = <10>;
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp DE_TILDE>
