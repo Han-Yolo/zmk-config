@@ -71,9 +71,9 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp DE_TILDE>
-                , <&macro_press &kp LSHFT>
+                , <&macro_press &kp RSHFT>
                 , <&macro_tap &kp DE_N>
-                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
                 ;
         };
     };
