@@ -8,8 +8,8 @@
 #include "keys_de_swiss.h"
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht LGUI k1  &ht LCTRL k2  &ht LALT k3  &ht LSHFT k4
+#define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
+#define HRMR(k1,k2,k3,k4) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3  &ht LGUI k4
 
 / {
     behaviors {
@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "slash_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_FSLH>, <&kp DE_BSLH>;
+            bindings = <&kp>, <&kp>;
             mods = <(MOD_LSFT)>;
         };
     };
@@ -52,7 +52,7 @@
            HRML(DE_A,   DE_S,      DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L,     DE_MINUS)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Y       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ;      │ . :      │ / \      │
-            &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B       &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &slash
+            &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B       &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &slash DE_FSLH DE_BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB &kp DE_SPACE     &kp BSPC  &lt 1 ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
