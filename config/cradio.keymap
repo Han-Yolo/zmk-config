@@ -11,6 +11,10 @@
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
 #define HRMR(k1,k2,k3,k4) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3  &ht LGUI k4
 
+#define DE_AE DE_A_UMLAUT
+#define DE_OE DE_O_UMLAUT
+#define DE_UE DE_U_UMLAUT
+
 / {
     behaviors {
         ht: hold_tap {
@@ -46,6 +50,16 @@
         };
     };
 
+    macros {
+        enyay: enyay_macro {
+            label = "enyay_macro";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RCTRL &kp DE_TILDE &kp DE_N>;
+        };
+    };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -77,15 +91,15 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  7       │  8       │  9       │          │   │ INSERT   │ HOME     │ UP       │ END      │ PAGE UP  │
-            &none     &kp DE_N7  &kp DE_N8  &kp DE_N9   &none          &kp INS    &kp HOME   &kp UARW   &kp END    &kp PG_UP
+            &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp INS    &kp HOME   &kp UARW   &kp END    &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │          │   │ DELETE   │ LEFT     │ DOWN     │ RIGHT    │ PAGE DN  │
-           HRML(&none,  DE_N4,     DE_N5,     DE_N6)    &none          &kp DEL    &kp LARW   &kp DARW   &kp RARW   &kp PG_DN
+        //│          │  4       │  5       │  6       │ CAPS     │   │ DELETE   │ LEFT     │ DOWN     │ RIGHT    │ PAGE DN  │
+           HRML(&none,  DE_N4,     DE_N5,     DE_N6)   &caps_word      &kp DEL    &kp LARW   &kp DARW   &kp RARW   &kp PG_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ 0        │  1       │  2       │  3       │          │   │          │          │ CAPS     │          │          │
-           &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3   &none          &none      &none     &caps_word  &none      &none
+        //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
+            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &kp DE_AE  &kp DE_OE  &kp DE_UE  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &none          &none      &trans
+                                             &trans     &trans         &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
