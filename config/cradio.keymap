@@ -48,15 +48,33 @@
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT)>;
         };
+        enyay: enyay_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "enyay_mod";
+            #binding-cells = <0>;
+            bindings = <&enyay_lower>, <&enyay_upper>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     macros {
-        enyay: enyay_macro {
-            label = "enyay_macro";
+        enyay_lower: enyay_lower_macro {
+            label = "enyay_lower_macro";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp RCTRL &kp DE_TILDE &kp DE_N>;
+                = <&macro_tap &kp RCTRL &kp DE_TILDE &kp DE_TILDE &kp DE_N>;
+        };
+        enyay_upper: enyay_upper_macro {
+            label = "enyay_upper_macro";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RCTRL &kp DE_TILDE &kp DE_TILDE>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp DE_N>
+                , <&macro_release &kp LSHFT>
+                ;
         };
     };
 
