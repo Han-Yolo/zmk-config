@@ -80,6 +80,24 @@
                 , <&macro_release &kp RSHFT>
                 ;
         };
+        inv_qmark: inv_qmark_macro {
+            label = "inv_qmark_macro";
+            compatible = "zmk,behavior-macro";
+            wait-ms = <10>;
+            tap-ms = <10>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RCTRL &kp DE_QMARK &kp DE_QMARK>;
+        };
+        inv_excl: inv_excl_macro {
+            label = "inv_excl_macro";
+            compatible = "zmk,behavior-macro";
+            wait-ms = <10>;
+            tap-ms = <10>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp RCTRL &kp DE_EXCL &kp DE_EXCL>;
+        };
     };
 
     conditional_layers {
@@ -113,7 +131,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  7       │  8       │  9       │          │   │ INSERT   │ HOME     │ UP       │ END      │ PAGE UP  │
-            &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp INS    &kp HOME   &kp UARW   &kp END    &kp PG_UP
+            &kp ESC    &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp INS    &kp HOME   &kp UARW   &kp END    &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │ CAPS     │   │ DELETE   │ LEFT     │ DOWN     │ RIGHT    │ PAGE DN  │
            HRML(&none,  DE_N4,     DE_N5,     DE_N6)   &caps_word      &kp DEL    &kp LARW   &kp DARW   &kp RARW   &kp PG_DN
@@ -129,14 +147,14 @@
         second_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &trans   &kp DE_LBKT &kp DE_LBRC &kp DE_RBRC &trans    &kp DE_CARET &kp DE_LPAR &kp DE_RPAR &kp DE_RBKT &kp DE_TILDE
+        //│  °       │  [       │  {       │  }       │  ¿       │   │  ?       │  (       │  )       │  ]       │          │
+         &kp DE_DEG &kp DE_LBKT &kp DE_LBRC &kp DE_RBRC &inv_qmark &kp DE_QMARK &kp DE_LPAR &kp DE_RPAR &kp DE_RBKT &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-         &kp DE_EXCL &kp DE_AT &kp DE_HASH &kp DE_DLLR &kp DE_PRCNT &kp DE_STAR &kp DE_MINUS &kp DE_EQUAL &kp DE_BSLH &kp DE_GRAVE
+        //│  |       │  @       │  &       │  #       │  %       │   │  +       │  *       │  =       │  '       │  "       │
+         &kp DE_PIPE &kp DE_AT &kp DE_AMPS &kp DE_HASH &kp DE_PRCNT &kp DE_PLUS &kp DE_STAR &kp DE_EQUAL &kp DE_SQT &kp DE_DQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &trans     &trans     &trans     &trans     &trans     &kp DE_AMPS &kp DE_UNDER &kp DE_PLUS &kp DE_PIPE &trans
+        //│          │  $       │  <       │  >       │  ¡       │   │  !       │  ´       │  `       │  ~       │  ¨       │
+            &none     &kp DE_DLLR &kp DE_LT  &kp DE_GT  &inv_excl  &kp DE_EXCL &kp DE_ACUTE &kp DE_GRAVE &kp DE_TILDE &kp DE_UMLAUT
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
