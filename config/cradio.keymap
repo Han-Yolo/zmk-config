@@ -9,7 +9,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
-#define HRMR(k1,k2,k3,k4) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3  &ht LGUI k4
+#define HRMR(k1,k2,k3) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3  &ht_slash LGUI 0
 
 #define DE_AE DE_A_UMLAUT
 #define DE_OE DE_O_UMLAUT
@@ -26,6 +26,16 @@
             quick-tap-ms = <150>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
+        };
+        ht_slash: hold_tap_slash {
+            label = "hold_tap_slash";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            global-quick-tap;
+            bindings = <&kp>, <&slash>;
         };
         slash: slash_mod {
             compatible = "zmk,behavior-mod-morph";
@@ -116,11 +126,11 @@
         //│  Q       │  W       │  E       │  R       │  T       │   │  Z       │  U       │  I       │  O       │  P       │
             &kp DE_Q   &kp DE_W   &kp DE_E   &kp DE_R   &kp DE_T       &kp DE_Z   &kp DE_U   &kp DE_I   &kp DE_O   &kp DE_P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ - _      │
-           HRML(DE_A,   DE_S,      DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L,     DE_MINUS)
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ / \      │
+           HRML(DE_A,   DE_S,      DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Y       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ;      │ . :      │ / \      │
-            &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B       &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &slash
+        //│  Y       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ;      │ . :      │ - _      │
+            &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B     &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &kp DE_MINUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 TAB   &space         &back     &lt 1 ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
