@@ -130,16 +130,16 @@
         first_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │          │   │ INSERT   │ HOME     │ UP       │ END      │ PAGE UP  │
-            &kp ESC    &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp INS    &kp HOME   &kp UARW   &kp END    &kp PG_UP
+        //│          │  7       │  8       │  9       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
+            &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │ CAPS     │   │ DELETE   │ LEFT     │ DOWN     │ RIGHT    │ PAGE DN  │
-           HRML(&none,  DE_N4,     DE_N5,     DE_N6)   &caps_word      &kp DEL    &kp LARW   &kp DARW   &kp RARW   &kp PG_DN
+        //│          │  4       │  5       │  6       │ CAPS     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ DELETE   │
+           HRML(&none,  DE_N4,     DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
             &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &kp DE_AE  &kp DE_OE  &kp DE_UE  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans      &trans
+                                             &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
