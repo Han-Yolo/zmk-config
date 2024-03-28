@@ -177,11 +177,11 @@
         //│ RESET    │          │          │          │PROFILE 0 │   │          │ DARKER   │ BRIGHTER │          │  RESET   │
            &sys_reset  &trans     &trans     &trans   &bt BT_SEL 0    &trans   &kp C_BRI_DN &kp C_BRI_UP &trans   &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          |          |          │PROFILE 1 │   │ PREVIOUS │ QUIETER  │ LOUDER   │ NEXT     │PLAY/PAUSE│
-            &trans     &trans     &trans     &trans   &bt BT_SEL 1  &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP
+        //│          │          |          |          │PROFILE 1 │   │ PREVIOUS │ QUIETER  │ LOUDER   │ NEXT     │          │
+            &trans     &trans     &trans     &trans   &bt BT_SEL 1  &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans   &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans    &bootloader
+        //│BOOTLOADER│          │          │ CLEAR BT │PROFILE 2 │   │          │PLAY/PAUSE│          │          │BOOTLOADER│
+          &bootloader  &trans     &trans   &bt BT_CLR &bt BT_SEL 2     &trans     &kp C_PP   &trans     &trans   &bootloader
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
