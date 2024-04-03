@@ -27,16 +27,6 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-        ht_slash: hold_tap_slash {
-            label = "hold_tap_slash";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
-            bindings = <&kp>, <&slash>;
-        };
         slash: slash_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "slash_mod";
@@ -127,7 +117,7 @@
             &kp DE_Q   &kp DE_W   &kp DE_E   &kp DE_R   &kp DE_T       &kp DE_Z   &kp DE_U   &kp DE_I   &kp DE_O   &kp DE_P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ / \      │
-            &kp DE_A  HRML(DE_S,   DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L)     &ht_slash
+            &kp DE_A  HRML(DE_S,   DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L)     &slash
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Y       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ;      │ . :      │ - _      │
             &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B     &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &kp DE_MINUS
