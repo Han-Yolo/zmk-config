@@ -8,8 +8,8 @@
 #include "keys_de_swiss.h"
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LSHFT k3  &ht LCTRL k4
-#define HRMR(k1,k2,k3) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3  &ht_slash LGUI 0
+#define HRML(k1,k2,k3) &ht LALT k1  &ht LSHFT k2  &ht LCTRL k3
+#define HRMR(k1,k2,k3) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3
 
 #define DE_AE DE_A_UMLAUT
 #define DE_OE DE_O_UMLAUT
@@ -127,7 +127,7 @@
             &kp DE_Q   &kp DE_W   &kp DE_E   &kp DE_R   &kp DE_T       &kp DE_Z   &kp DE_U   &kp DE_I   &kp DE_O   &kp DE_P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ / \      │
-           HRML(DE_A,   DE_S,      DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L)
+            &kp DE_A  HRML(DE_S,   DE_D,      DE_F)     &kp DE_G       &kp DE_H  HRMR(DE_J,   DE_K,      DE_L)     &ht_slash
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Y       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , ;      │ . :      │ - _      │
             &kp DE_Y   &kp DE_X   &kp DE_C   &kp DE_V   &kp DE_B     &kp DE_N   &kp DE_M &kp DE_COMMA &kp DE_DOT &kp DE_MINUS
@@ -140,11 +140,11 @@
         first_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
-            &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &none          &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp INS
+        //│          │  7       │  8       │  9       │  GUI     │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
+            &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp LGUI       &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │ CAPS     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ DELETE   │
-           HRML(&none,  DE_N4,     DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
+            &none     HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
             &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &kp DE_AE  &kp DE_OE  &kp DE_UE  &enyay
