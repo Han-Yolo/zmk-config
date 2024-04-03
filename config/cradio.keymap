@@ -11,9 +11,9 @@
 #define HRML(k1,k2,k3) &ht LALT k1  &ht LSHFT k2  &ht LCTRL k3
 #define HRMR(k1,k2,k3) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3
 
-#define DE_AE DE_A_UMLAUT
-#define DE_OE DE_O_UMLAUT
-#define DE_UE DE_U_UMLAUT
+&caps_word {
+    continue-list = <DE_MINUS BSPC DEL DE_A_UMLAUT DE_O_UMLAUT DE_U_UMLAUT>;
+};
 
 / {
     behaviors {
@@ -52,21 +52,21 @@
             compatible = "zmk,behavior-mod-morph";
             label = "a_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_AE>, <&caps_hug_macro DE_AE>;
+            bindings = <&kp DE_A_UMLAUT>, <&caps_hug DE_A_UMLAUT>;
             mods = <(MOD_LSFT)>;
         };
         o_umlaut: o_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "o_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_OE>, <&caps_hug_macro DE_OE>;
+            bindings = <&kp DE_O_UMLAUT>, <&caps_hug DE_O_UMLAUT>;
             mods = <(MOD_LSFT)>;
         };
         u_umlaut: u_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "u_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_UE>, <&caps_hug_macro DE_UE>;
+            bindings = <&kp DE_U_UMLAUT>, <&caps_hug DE_U_UMLAUT>;
             mods = <(MOD_LSFT)>;
         };
         enyay: enyay_mod {
@@ -88,7 +88,7 @@
                 , <&kp MACRO_PLACEHOLDER>
                 , <&kp DE_SPACE>;
         };
-        caps_hug_macro: caps_hug_macro {
+        caps_hug: caps_hug_macro {
             label = "caps_hug_macro";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <10>;
