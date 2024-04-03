@@ -60,10 +60,12 @@
     macros {
         so: space_out_macro {
             label = "space_out_macro";
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings
-                = <&macro_tap &kp &space>;
+                = <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&kp DE_SPACE>;
         };
         enyay_lower: enyay_lower_macro {
             label = "enyay_lower_macro";
