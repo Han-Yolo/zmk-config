@@ -52,21 +52,21 @@
             compatible = "zmk,behavior-mod-morph";
             label = "a_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_AE>, <&caps_hug_mod DE_AE>;
+            bindings = <&kp DE_AE>, <&caps_hug_macro DE_AE>;
             mods = <(MOD_LSFT)>;
         };
         o_umlaut: o_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "o_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_OE>, <&caps_hug_mod DE_OE>;
+            bindings = <&kp DE_OE>, <&caps_hug_macro DE_OE>;
             mods = <(MOD_LSFT)>;
         };
         u_umlaut: u_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "u_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_UE>, <&caps_hug_mod DE_UE>;
+            bindings = <&kp DE_UE>, <&caps_hug_macro DE_UE>;
             mods = <(MOD_LSFT)>;
         };
         enyay: enyay_mod {
