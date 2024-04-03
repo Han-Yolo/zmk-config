@@ -48,6 +48,27 @@
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT)>;
         };
+        a_umlaut: a_umlaut_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "a_umlaut_mod";
+            #binding-cells = <0>;
+            bindings = <&kp DE_AE>, <&caps_hug_mod DE_AE>;
+            mods = <(MOD_LSFT)>;
+        };
+        o_umlaut: o_umlaut_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "o_umlaut_mod";
+            #binding-cells = <0>;
+            bindings = <&kp DE_OE>, <&caps_hug_mod DE_OE>;
+            mods = <(MOD_LSFT)>;
+        };
+        u_umlaut: u_umlaut_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "u_umlaut_mod";
+            #binding-cells = <0>;
+            bindings = <&kp DE_UE>, <&caps_hug_mod DE_UE>;
+            mods = <(MOD_LSFT)>;
+        };
         enyay: enyay_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "enyay_mod";
@@ -66,6 +87,19 @@
                 = <&macro_param_1to1>
                 , <&kp MACRO_PLACEHOLDER>
                 , <&kp DE_SPACE>;
+        };
+        caps_hug_macro: caps_hug_macro {
+            label = "caps_hug_macro";
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <10>;
+            tap-ms = <10>;
+            #binding-cells = <1>;
+            bindings
+                = <&kp CAPS>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&kp CAPS>
+                ;
         };
         enyay_lower: enyay_lower_macro {
             label = "enyay_lower_macro";
@@ -146,7 +180,7 @@
             &none     HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
-            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &kp DE_AE  &kp DE_OE  &kp DE_UE  &enyay
+            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
