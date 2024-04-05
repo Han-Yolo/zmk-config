@@ -12,7 +12,7 @@
 #define HRMR(k1,k2,k3) &ht LCTRL k1  &ht LSHFT k2  &ht LALT k3
 
 &caps_word {
-    continue-list = <DE_MINUS BSPC DEL DE_A_UMLAUT DE_O_UMLAUT DE_U_UMLAUT>;
+    continue-list = <DE_MINUS BSPC DEL>;
 };
 
 / {
@@ -87,6 +87,18 @@
                 = <&macro_param_1to1>
                 , <&kp MACRO_PLACEHOLDER>
                 , <&kp DE_SPACE>;
+        };
+        umlaut: umlaut_macro {
+            label = "umlaut_macro";
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <10>;
+            tap-ms = <10>;
+            #binding-cells = <1>;
+            bindings
+                = <&kp DE_UMLAUT>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                ;
         };
         caps_hug: caps_hug_macro {
             label = "caps_hug_macro";
@@ -180,7 +192,7 @@
             &none     HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
-            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
+            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none  &umlaut DE_A &umlaut DE_O &umlaut DE_U &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
