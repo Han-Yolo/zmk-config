@@ -52,28 +52,28 @@
             compatible = "zmk,behavior-mod-morph";
             label = "a_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&umlaut DE_A>, <&umlaut LS(DE_A)>;
+            bindings = <&diacritic DE_UMLAUT DE_A>, <&diacritic DE_UMLAUT LS(DE_A)>;
             mods = <(MOD_LSFT)>;
         };
         o_umlaut: o_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "o_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&umlaut DE_O>, <&umlaut LS(DE_O)>;
+            bindings = <&diacritic DE_UMLAUT DE_O>, <&diacritic DE_UMLAUT LS(DE_O)>;
             mods = <(MOD_LSFT)>;
         };
         u_umlaut: u_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "u_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&umlaut DE_U>, <&umlaut LS(DE_U)>;
+            bindings = <&diacritic DE_UMLAUT DE_U>, <&diacritic DE_UMLAUT LS(DE_U)>;
             mods = <(MOD_LSFT)>;
         };
         enyay: enyay_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "enyay_mod";
             #binding-cells = <0>;
-            bindings = <&enyay_lower>, <&enyay_upper>;
+            bindings = <&diacritic DE_TILDE DE_N>, <&diacritic DE_TILDE LS(DE_N)>;
             mods = <(MOD_LSFT)>;
         };
     };
@@ -88,16 +88,17 @@
                 , <&kp MACRO_PLACEHOLDER>
                 , <&kp DE_SPACE>;
         };
-        umlaut: umlaut_macro {
-            label = "umlaut_macro";
+        diacritic: diacritic_macro {
+            label = "diacritic_macro";
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <10>;
             tap-ms = <10>;
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             bindings
-                = <&kp DE_UMLAUT>
-                , <&macro_param_1to1>
-                , <&kp MACRO_PLACEHOLDER>
+                = <&macro_param_1to1>
+                , <&kp DIACRITIC_PLACEHOLDER>
+                , <&macro_param_2to1>
+                , <&kp LETTER_PLACEHOLDER>
                 ;
         };
         caps_hug: caps_hug_macro {
