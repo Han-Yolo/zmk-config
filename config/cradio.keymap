@@ -101,41 +101,6 @@
                 , <&kp LETTER_PLACEHOLDER>
                 ;
         };
-        caps_hug: caps_hug_macro {
-            label = "caps_hug_macro";
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <10>;
-            tap-ms = <10>;
-            #binding-cells = <1>;
-            bindings
-                = <&kp CAPS>
-                , <&macro_param_1to1>
-                , <&kp MACRO_PLACEHOLDER>
-                , <&kp CAPS>
-                ;
-        };
-        enyay_lower: enyay_lower_macro {
-            label = "enyay_lower_macro";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <10>;
-            tap-ms = <10>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp DE_TILDE &kp DE_N>;
-        };
-        enyay_upper: enyay_upper_macro {
-            label = "enyay_upper_macro";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <10>;
-            tap-ms = <10>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp DE_TILDE>
-                , <&macro_press &kp RSHFT>
-                , <&macro_tap &kp DE_N>
-                , <&macro_release &kp RSHFT>
-                ;
-        };
         inv_qmark: inv_qmark_macro {
             label = "inv_qmark_macro";
             compatible = "zmk,behavior-macro";
