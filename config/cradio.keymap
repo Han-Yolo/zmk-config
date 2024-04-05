@@ -52,21 +52,21 @@
             compatible = "zmk,behavior-mod-morph";
             label = "a_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_A_UMLAUT>, <&caps_hug DE_A_UMLAUT>;
+            bindings = <&umlaut DE_A>, <&umlaut LS(DE_A)>;
             mods = <(MOD_LSFT)>;
         };
         o_umlaut: o_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "o_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_O_UMLAUT>, <&caps_hug DE_O_UMLAUT>;
+            bindings = <&umlaut DE_O>, <&umlaut LS(DE_O)>;
             mods = <(MOD_LSFT)>;
         };
         u_umlaut: u_umlaut_mod {
             compatible = "zmk,behavior-mod-morph";
             label = "u_umlaut_mod";
             #binding-cells = <0>;
-            bindings = <&kp DE_U_UMLAUT>, <&caps_hug DE_U_UMLAUT>;
+            bindings = <&umlaut DE_U>, <&umlaut LS(DE_U)>;
             mods = <(MOD_LSFT)>;
         };
         enyay: enyay_mod {
@@ -192,7 +192,7 @@
             &none     HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ 0        │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
-            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none  &umlaut DE_A &umlaut DE_O &umlaut DE_U &enyay
+            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
