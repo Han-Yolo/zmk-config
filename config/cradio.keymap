@@ -96,9 +96,9 @@
             #binding-cells = <2>;
             bindings
                 = <&macro_param_1to1>
-                , <&kp DIACRITIC_PLACEHOLDER>
+                , <&kp MACRO_PLACEHOLDER>
                 , <&macro_param_2to1>
-                , <&kp LETTER_PLACEHOLDER>
+                , <&kp MACRO_PLACEHOLDER>
                 ;
         };
         inv_qmark: inv_qmark_macro {
