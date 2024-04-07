@@ -168,14 +168,14 @@
         second_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  °       │  [       │  {       │  }       │  ¿       │   │  ?       │  (       │  )       │  ]       │          │
-     &kp LS(DE_SECT) &kp DE_LBKT &kp DE_LBRC &kp DE_RBRC &inv_qmark &kp DE_QMARK &kp DE_LPAR &kp DE_RPAR &kp DE_RBKT &none
+        //│  °       │  ^       │  {       │  }       │  ¿       │   │  ?       │  (       │  )       │  $       │          │
+     &kp LS(DE_SECT) &so DE_CARET &kp DE_LBRC &kp DE_RBRC &inv_qmark &kp DE_QMARK &kp DE_LPAR &kp DE_RPAR &kp DE_DLLR &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  |       │  @       │  &       │  #       │  %       │   │  +       │  *       │  =       │  '       │  "       │
          &kp DE_PIPE &kp DE_AT &kp DE_AMPS &kp DE_HASH &kp DE_PRCNT &kp DE_PLUS &kp DE_STAR &kp DE_EQUAL &kp DE_SQT &kp DE_DQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ^        │  $       │  <       │  >       │  ¡       │   │  !       │  ´       │  `       │  ~       │  ¨       │
-         &so DE_CARET &kp DE_DLLR &kp DE_LT  &kp DE_GT  &inv_excl  &kp DE_EXCL &so DE_ACUTE &so DE_GRAVE &so DE_TILDE &kp DE_UMLAUT
+        //│ ¨        │  ~       │  <       │  >       │  ¡       │   │  !       │  [       │  ]       │  ´       │  `       │
+         &so DE_UMLAUT &so DE_TILDE &kp DE_LT &kp DE_GT &inv_excl   &kp DE_EXCL &kp DE_LBKT &kp DE_RBKT &so DE_ACUTE &so DE_GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
