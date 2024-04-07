@@ -154,7 +154,7 @@
         first_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  7       │  8       │  9       │  GUI     │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
+        //│          │  7       │  8       │  9       │ GUI      │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
             &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp LGUI       &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  4       │  5       │  6       │ CAPS     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ DELETE   │
