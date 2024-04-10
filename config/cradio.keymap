@@ -157,11 +157,11 @@
         //│          │  7       │  8       │  9       │ GUI      │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │ INSERT   │
             &none      &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp LGUI       &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp INS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  4       │  5       │  6       │ CAPS     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ DELETE   │
-            &none     HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
+        //│  0       │  4       │  5       │  6       │ CAPS     │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │ DELETE   │
+            &kp DE_N0 HRML(DE_N4,  DE_N5,     DE_N6)   &caps_word      &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp DEL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  0       │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
-            &kp DE_N0  &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
+        //│          │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
+            &none      &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
