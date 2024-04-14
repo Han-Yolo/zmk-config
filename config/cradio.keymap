@@ -163,7 +163,7 @@
         //│          │  1       │  2       │  3       │          │   │          │  ä       │  ö       │  ü       │  ñ       │
             &none      &kp DE_N1  &kp DE_N2  &kp DE_N3  &none          &none      &a_umlaut  &o_umlaut  &u_umlaut  &enyay
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &kp ESC        &kp DEL    &trans
+                                             &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -180,7 +180,7 @@
         //│ ¨        │  !       │  <       │  >       │  ¡       │   │  ~       │  [       │  ]       │  ´       │  `       │
          &db DE_UMLAUT &kp DE_EXCL &kp DE_LT &kp DE_GT  &inv_excl  &db DE_TILDE &kp DE_LBKT &kp DE_RBKT &db DE_ACUTE &db DE_GRAVE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
+                                             &trans     &trans         &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
